@@ -1,0 +1,42 @@
+/*
+===========================================================
+스프링 부트
+* */
+buildscript{
+    //ext -> 전역변수 설정
+    ext {
+        springBootVersion ='2.1.7.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// 아래는  자바와 스프링부트를 사용하기 위한 필수 플러그인 4개이다.
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+//스프링부트의 의존성들을 관리해주는 필수 플러그인
+apply plugin: 'io.spring.dependency-management'
+/*
+===========================================================
+*
+*/
+group 'com.hgkimer'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
