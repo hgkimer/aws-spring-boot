@@ -2,17 +2,17 @@
 ===========================================================
 스프링 부트
 * */
-buildscript{
+buildscript {
     //ext -> 전역변수 설정
     ext {
-        springBootVersion ='2.1.7.RELEASE'
+        springBootVersion = '2.1.7.RELEASE'
     }
 
     repositories {
         mavenCentral()
         jcenter()
     }
-    dependencies{
+    dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
@@ -38,5 +38,6 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok:')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
