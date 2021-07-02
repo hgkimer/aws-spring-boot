@@ -14,6 +14,8 @@ public class HelloController {
 
 	@GetMapping("/hello/dto")
 	public HelloResponseDto getHelloResponse(@RequestParam String name, @RequestParam int amount) {
-		return new HelloResponseDto(name, amount);
+		HelloResponseDto dto = new HelloResponseDto(name, amount);
+		return dto;
+
 	}
 }
